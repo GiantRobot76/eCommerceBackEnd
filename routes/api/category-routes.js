@@ -48,7 +48,7 @@ router.post("/", async (req, res) => {
 router.put("/:id", async (req, res) => {
   // update a category by its `id` value
   try {
-    const updateCategory = await Tag.update(
+    const updateCategory = await Category.update(
       {
         category_name: req.body.category_name,
       },
@@ -66,8 +66,20 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-router.delete("/:id", (req, res) => {
+router.delete("/:id", async (req, res) => {
   // delete a category by its `id` value
+  try {
+    const deleteCategory = await Category.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
+    res
+      .status(200)
+      .json({ message: `Category ${req.params.id} Removed from Database` });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;
