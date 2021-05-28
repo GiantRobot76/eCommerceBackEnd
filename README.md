@@ -2,6 +2,10 @@ Project objective was to refactor/expand existing code to create functional CRUD
 
 video link: https://drive.google.com/file/d/1f_zEJ46RU65ALZTKK0RnDXbqXwIMaHRb/view
 
+preview screenshot of Insomnia test: 
+![image](https://user-images.githubusercontent.com/34629779/120039685-90460280-bfc2-11eb-94fd-8d57dfe1974e.png)
+
+
 GIVEN a functional Express.js API
 WHEN I add my database name, MySQL username, and MySQL password to an environment variable file
 THEN I am able to connect to a database using Sequelize
